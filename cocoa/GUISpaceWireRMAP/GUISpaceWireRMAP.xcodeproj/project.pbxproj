@@ -1,0 +1,536 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		935574E2148DE4D600706898 /* JindaijiFlower.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 935574E1148DE4D600706898 /* JindaijiFlower.JPG */; };
+		9374A947149084AA0060D281 /* Icon_Red.icns in Resources */ = {isa = PBXBuildFile; fileRef = 9374A946149084AA0060D281 /* Icon_Red.icns */; };
+		938AAD5613CC1E9B00F54C12 /* RMAPPacketUtilityViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 938AAD5513CC1E9B00F54C12 /* RMAPPacketUtilityViewController.mm */; };
+		939BDE9E1456932F004188DA /* SpaceWireIFViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 939BDE9D1456932F004188DA /* SpaceWireIFViewController.mm */; };
+		93BA387413CACCF800A4145F /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93BA387313CACCF800A4145F /* Cocoa.framework */; };
+		93BA387E13CACCF800A4145F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 93BA387C13CACCF800A4145F /* InfoPlist.strings */; };
+		93BA388113CACCF800A4145F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 93BA388013CACCF800A4145F /* main.m */; };
+		93BA388413CACCF800A4145F /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 93BA388213CACCF800A4145F /* Credits.rtf */; };
+		93BA388713CACCF800A4145F /* GUISpaceWireRMAPAppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 93BA388613CACCF800A4145F /* GUISpaceWireRMAPAppDelegate.mm */; };
+		93BA388A13CACCF800A4145F /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93BA388813CACCF800A4145F /* MainMenu.xib */; };
+		93BA389113CACCF900A4145F /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93BA387313CACCF800A4145F /* Cocoa.framework */; };
+		93BA389913CACCF900A4145F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 93BA389713CACCF900A4145F /* InfoPlist.strings */; };
+		93BA389C13CACCF900A4145F /* GUISpaceWireRMAPTests.h in Resources */ = {isa = PBXBuildFile; fileRef = 93BA389B13CACCF900A4145F /* GUISpaceWireRMAPTests.h */; };
+		93BA389E13CACCF900A4145F /* GUISpaceWireRMAPTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 93BA389D13CACCF900A4145F /* GUISpaceWireRMAPTests.m */; };
+		93D44BCD148CC8100045DDA9 /* RMAPTargetNodeController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 93D44BCC148CC8100045DDA9 /* RMAPTargetNodeController.mm */; };
+		93D49C06145549C2001AC185 /* SpaceWireViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 93D49C04145549C2001AC185 /* SpaceWireViewController.mm */; };
+		93E4AFDB1457D35700980A57 /* GSRMainController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 93E4AFDA1457D35700980A57 /* GSRMainController.mm */; };
+		93E4AFDF1457D64800980A57 /* Utility.mm in Sources */ = {isa = PBXBuildFile; fileRef = 93E4AFDE1457D64800980A57 /* Utility.mm */; };
+		93E4AFE61457DC4A00980A57 /* RMAPViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 93E4AFE51457DC4A00980A57 /* RMAPViewController.mm */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		93BA389213CACCF900A4145F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 93BA386613CACCF800A4145F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 93BA386E13CACCF800A4145F;
+			remoteInfo = GUISpaceWireRMAP;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		935574E1148DE4D600706898 /* JindaijiFlower.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = JindaijiFlower.JPG; sourceTree = "<group>"; };
+		9374A946149084AA0060D281 /* Icon_Red.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Icon_Red.icns; sourceTree = "<group>"; };
+		938AAD5413CC1E9B00F54C12 /* RMAPPacketUtilityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RMAPPacketUtilityViewController.h; path = ../RMAPPacketUtilityViewController.h; sourceTree = "<group>"; };
+		938AAD5513CC1E9B00F54C12 /* RMAPPacketUtilityViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = RMAPPacketUtilityViewController.mm; path = ../RMAPPacketUtilityViewController.mm; sourceTree = "<group>"; };
+		939BDE9C1456932F004188DA /* SpaceWireIFViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpaceWireIFViewController.h; sourceTree = "<group>"; };
+		939BDE9D1456932F004188DA /* SpaceWireIFViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SpaceWireIFViewController.mm; sourceTree = "<group>"; };
+		93BA386F13CACCF800A4145F /* GUISpaceWireRMAP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = GUISpaceWireRMAP.app; path = "SpaceWire RMAP GUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		93BA387313CACCF800A4145F /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		93BA387613CACCF800A4145F /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		93BA387713CACCF800A4145F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		93BA387813CACCF800A4145F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		93BA387B13CACCF800A4145F /* GUISpaceWireRMAP-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GUISpaceWireRMAP-Info.plist"; sourceTree = "<group>"; };
+		93BA387D13CACCF800A4145F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		93BA387F13CACCF800A4145F /* GUISpaceWireRMAP-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GUISpaceWireRMAP-Prefix.pch"; sourceTree = "<group>"; };
+		93BA388013CACCF800A4145F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		93BA388313CACCF800A4145F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		93BA388513CACCF800A4145F /* GUISpaceWireRMAPAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GUISpaceWireRMAPAppDelegate.h; sourceTree = "<group>"; };
+		93BA388613CACCF800A4145F /* GUISpaceWireRMAPAppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = GUISpaceWireRMAPAppDelegate.mm; sourceTree = "<group>"; };
+		93BA388913CACCF800A4145F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		93BA389013CACCF900A4145F /* GUISpaceWireRMAPTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GUISpaceWireRMAPTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		93BA389613CACCF900A4145F /* GUISpaceWireRMAPTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GUISpaceWireRMAPTests-Info.plist"; sourceTree = "<group>"; };
+		93BA389813CACCF900A4145F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		93BA389A13CACCF900A4145F /* GUISpaceWireRMAPTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GUISpaceWireRMAPTests-Prefix.pch"; sourceTree = "<group>"; };
+		93BA389B13CACCF900A4145F /* GUISpaceWireRMAPTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GUISpaceWireRMAPTests.h; sourceTree = "<group>"; };
+		93BA389D13CACCF900A4145F /* GUISpaceWireRMAPTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GUISpaceWireRMAPTests.m; sourceTree = "<group>"; };
+		93D44BCB148CC8100045DDA9 /* RMAPTargetNodeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMAPTargetNodeController.h; sourceTree = "<group>"; };
+		93D44BCC148CC8100045DDA9 /* RMAPTargetNodeController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RMAPTargetNodeController.mm; sourceTree = "<group>"; };
+		93D49C03145549C2001AC185 /* SpaceWireViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpaceWireViewController.h; sourceTree = "<group>"; };
+		93D49C04145549C2001AC185 /* SpaceWireViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SpaceWireViewController.mm; sourceTree = "<group>"; };
+		93E4AFD91457D35700980A57 /* GSRMainController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSRMainController.h; sourceTree = "<group>"; };
+		93E4AFDA1457D35700980A57 /* GSRMainController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GSRMainController.mm; sourceTree = "<group>"; };
+		93E4AFDD1457D64800980A57 /* Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
+		93E4AFDE1457D64800980A57 /* Utility.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Utility.mm; sourceTree = "<group>"; };
+		93E4AFE41457DC4A00980A57 /* RMAPViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMAPViewController.h; sourceTree = "<group>"; };
+		93E4AFE51457DC4A00980A57 /* RMAPViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RMAPViewController.mm; sourceTree = "<group>"; };
+		93E4AFE71457DCC500980A57 /* CommonHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonHeader.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		93BA386C13CACCF800A4145F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				93BA387413CACCF800A4145F /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		93BA388C13CACCF900A4145F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				93BA389113CACCF900A4145F /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		93BA386413CACCF800A4145F = {
+			isa = PBXGroup;
+			children = (
+				93BA387913CACCF800A4145F /* GUISpaceWireRMAP */,
+				93BA389413CACCF900A4145F /* GUISpaceWireRMAPTests */,
+				93BA387213CACCF800A4145F /* Frameworks */,
+				93BA387013CACCF800A4145F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		93BA387013CACCF800A4145F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				93BA386F13CACCF800A4145F /* GUISpaceWireRMAP.app */,
+				93BA389013CACCF900A4145F /* GUISpaceWireRMAPTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		93BA387213CACCF800A4145F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				93BA387313CACCF800A4145F /* Cocoa.framework */,
+				93BA387513CACCF800A4145F /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		93BA387513CACCF800A4145F /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				93BA387613CACCF800A4145F /* AppKit.framework */,
+				93BA387713CACCF800A4145F /* CoreData.framework */,
+				93BA387813CACCF800A4145F /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		93BA387913CACCF800A4145F /* GUISpaceWireRMAP */ = {
+			isa = PBXGroup;
+			children = (
+				9374A946149084AA0060D281 /* Icon_Red.icns */,
+				935574E1148DE4D600706898 /* JindaijiFlower.JPG */,
+				938AAD5413CC1E9B00F54C12 /* RMAPPacketUtilityViewController.h */,
+				938AAD5513CC1E9B00F54C12 /* RMAPPacketUtilityViewController.mm */,
+				93BA388513CACCF800A4145F /* GUISpaceWireRMAPAppDelegate.h */,
+				93BA388613CACCF800A4145F /* GUISpaceWireRMAPAppDelegate.mm */,
+				93BA388813CACCF800A4145F /* MainMenu.xib */,
+				93BA387A13CACCF800A4145F /* Supporting Files */,
+				93D49C03145549C2001AC185 /* SpaceWireViewController.h */,
+				93D49C04145549C2001AC185 /* SpaceWireViewController.mm */,
+				939BDE9C1456932F004188DA /* SpaceWireIFViewController.h */,
+				939BDE9D1456932F004188DA /* SpaceWireIFViewController.mm */,
+				93E4AFD91457D35700980A57 /* GSRMainController.h */,
+				93E4AFDA1457D35700980A57 /* GSRMainController.mm */,
+				93E4AFDD1457D64800980A57 /* Utility.h */,
+				93E4AFDE1457D64800980A57 /* Utility.mm */,
+				93E4AFE41457DC4A00980A57 /* RMAPViewController.h */,
+				93E4AFE51457DC4A00980A57 /* RMAPViewController.mm */,
+				93E4AFE71457DCC500980A57 /* CommonHeader.h */,
+				93D44BCB148CC8100045DDA9 /* RMAPTargetNodeController.h */,
+				93D44BCC148CC8100045DDA9 /* RMAPTargetNodeController.mm */,
+			);
+			path = GUISpaceWireRMAP;
+			sourceTree = "<group>";
+		};
+		93BA387A13CACCF800A4145F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				93BA387B13CACCF800A4145F /* GUISpaceWireRMAP-Info.plist */,
+				93BA387C13CACCF800A4145F /* InfoPlist.strings */,
+				93BA387F13CACCF800A4145F /* GUISpaceWireRMAP-Prefix.pch */,
+				93BA388013CACCF800A4145F /* main.m */,
+				93BA388213CACCF800A4145F /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		93BA389413CACCF900A4145F /* GUISpaceWireRMAPTests */ = {
+			isa = PBXGroup;
+			children = (
+				93BA389B13CACCF900A4145F /* GUISpaceWireRMAPTests.h */,
+				93BA389D13CACCF900A4145F /* GUISpaceWireRMAPTests.m */,
+				93BA389513CACCF900A4145F /* Supporting Files */,
+			);
+			path = GUISpaceWireRMAPTests;
+			sourceTree = "<group>";
+		};
+		93BA389513CACCF900A4145F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				93BA389613CACCF900A4145F /* GUISpaceWireRMAPTests-Info.plist */,
+				93BA389713CACCF900A4145F /* InfoPlist.strings */,
+				93BA389A13CACCF900A4145F /* GUISpaceWireRMAPTests-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		93BA386E13CACCF800A4145F /* SpaceWire RMAP GUI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 93BA38A113CACCF900A4145F /* Build configuration list for PBXNativeTarget "SpaceWire RMAP GUI" */;
+			buildPhases = (
+				93BA386B13CACCF800A4145F /* Sources */,
+				93BA386C13CACCF800A4145F /* Frameworks */,
+				93BA386D13CACCF800A4145F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "SpaceWire RMAP GUI";
+			productName = GUISpaceWireRMAP;
+			productReference = 93BA386F13CACCF800A4145F /* GUISpaceWireRMAP.app */;
+			productType = "com.apple.product-type.application";
+		};
+		93BA388F13CACCF900A4145F /* GUISpaceWireRMAPTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 93BA38A413CACCF900A4145F /* Build configuration list for PBXNativeTarget "GUISpaceWireRMAPTests" */;
+			buildPhases = (
+				93BA388B13CACCF900A4145F /* Sources */,
+				93BA388C13CACCF900A4145F /* Frameworks */,
+				93BA388D13CACCF900A4145F /* Resources */,
+				93BA388E13CACCF900A4145F /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				93BA389313CACCF900A4145F /* PBXTargetDependency */,
+			);
+			name = GUISpaceWireRMAPTests;
+			productName = GUISpaceWireRMAPTests;
+			productReference = 93BA389013CACCF900A4145F /* GUISpaceWireRMAPTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		93BA386613CACCF800A4145F /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 93BA386913CACCF800A4145F /* Build configuration list for PBXProject "GUISpaceWireRMAP" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 93BA386413CACCF800A4145F;
+			productRefGroup = 93BA387013CACCF800A4145F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				93BA386E13CACCF800A4145F /* SpaceWire RMAP GUI */,
+				93BA388F13CACCF900A4145F /* GUISpaceWireRMAPTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		93BA386D13CACCF800A4145F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				93BA387E13CACCF800A4145F /* InfoPlist.strings in Resources */,
+				93BA388413CACCF800A4145F /* Credits.rtf in Resources */,
+				93BA388A13CACCF800A4145F /* MainMenu.xib in Resources */,
+				935574E2148DE4D600706898 /* JindaijiFlower.JPG in Resources */,
+				9374A947149084AA0060D281 /* Icon_Red.icns in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		93BA388D13CACCF900A4145F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				93BA389913CACCF900A4145F /* InfoPlist.strings in Resources */,
+				93BA389C13CACCF900A4145F /* GUISpaceWireRMAPTests.h in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		93BA388E13CACCF900A4145F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		93BA386B13CACCF800A4145F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				93BA388113CACCF800A4145F /* main.m in Sources */,
+				93BA388713CACCF800A4145F /* GUISpaceWireRMAPAppDelegate.mm in Sources */,
+				938AAD5613CC1E9B00F54C12 /* RMAPPacketUtilityViewController.mm in Sources */,
+				93D49C06145549C2001AC185 /* SpaceWireViewController.mm in Sources */,
+				939BDE9E1456932F004188DA /* SpaceWireIFViewController.mm in Sources */,
+				93E4AFDB1457D35700980A57 /* GSRMainController.mm in Sources */,
+				93E4AFDF1457D64800980A57 /* Utility.mm in Sources */,
+				93E4AFE61457DC4A00980A57 /* RMAPViewController.mm in Sources */,
+				93D44BCD148CC8100045DDA9 /* RMAPTargetNodeController.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		93BA388B13CACCF900A4145F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				93BA389E13CACCF900A4145F /* GUISpaceWireRMAPTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		93BA389313CACCF900A4145F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 93BA386E13CACCF800A4145F /* SpaceWire RMAP GUI */;
+			targetProxy = 93BA389213CACCF900A4145F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		93BA387C13CACCF800A4145F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				93BA387D13CACCF800A4145F /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		93BA388213CACCF800A4145F /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				93BA388313CACCF800A4145F /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		93BA388813CACCF800A4145F /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				93BA388913CACCF800A4145F /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		93BA389713CACCF900A4145F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				93BA389813CACCF900A4145F /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		93BA389F13CACCF900A4145F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_GC = required;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = "";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = NO;
+				HEADER_SEARCH_PATHS = (
+					"/Users/yuasa/work/install/xerces-c-3.1.1-x86-macosx-gcc-4.0/include",
+					/Users/yuasa/ws/XMLUtilities,
+					/Users/yuasa/Documents/workspace/SpaceWireRMAPLibrary/includes,
+					/usr/local/CxxUtilities/includes,
+				);
+				INFOPLIST_FILE = net.teampanda.pod.GUISpaceWireRMAP;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "/Users/yuasa/work/install/xerces-c-3.1.1-x86-macosx-gcc-4.0/lib/libxerces-c.a";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		93BA38A013CACCF900A4145F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_GC = required;
+				GCC_VERSION = "";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = NO;
+				HEADER_SEARCH_PATHS = (
+					"/Users/yuasa/work/install/xerces-c-3.1.1-x86-macosx-gcc-4.0/include",
+					/Users/yuasa/ws/XMLUtilities,
+					/Users/yuasa/Documents/workspace/SpaceWireRMAPLibrary/includes,
+					/usr/local/CxxUtilities/includes,
+				);
+				INFOPLIST_FILE = net.teampanda.pod.GUISpaceWireRMAP;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				OTHER_LDFLAGS = "/Users/yuasa/work/install/xerces-c-3.1.1-x86-macosx-gcc-4.0/lib/libxerces-c.a";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		93BA38A213CACCF900A4145F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GUISpaceWireRMAP/GUISpaceWireRMAP-Prefix.pch";
+				INFOPLIST_FILE = "GUISpaceWireRMAP/GUISpaceWireRMAP-Info.plist";
+				OTHER_CPLUSPLUSFLAGS = (
+					"$(OTHER_CFLAGS)",
+					"-DNO_XMLLODER",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		93BA38A313CACCF900A4145F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GUISpaceWireRMAP/GUISpaceWireRMAP-Prefix.pch";
+				INFOPLIST_FILE = "GUISpaceWireRMAP/GUISpaceWireRMAP-Info.plist";
+				OTHER_CPLUSPLUSFLAGS = (
+					"$(OTHER_CFLAGS)",
+					"-DNO_XMLLODER",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		93BA38A513CACCF900A4145F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/GUISpaceWireRMAP.app/Contents/MacOS/GUISpaceWireRMAP";
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GUISpaceWireRMAPTests/GUISpaceWireRMAPTests-Prefix.pch";
+				INFOPLIST_FILE = "GUISpaceWireRMAPTests/GUISpaceWireRMAPTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		93BA38A613CACCF900A4145F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/GUISpaceWireRMAP.app/Contents/MacOS/GUISpaceWireRMAP";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GUISpaceWireRMAPTests/GUISpaceWireRMAPTests-Prefix.pch";
+				INFOPLIST_FILE = "GUISpaceWireRMAPTests/GUISpaceWireRMAPTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		93BA386913CACCF800A4145F /* Build configuration list for PBXProject "GUISpaceWireRMAP" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				93BA389F13CACCF900A4145F /* Debug */,
+				93BA38A013CACCF900A4145F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		93BA38A113CACCF900A4145F /* Build configuration list for PBXNativeTarget "SpaceWire RMAP GUI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				93BA38A213CACCF900A4145F /* Debug */,
+				93BA38A313CACCF900A4145F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		93BA38A413CACCF900A4145F /* Build configuration list for PBXNativeTarget "GUISpaceWireRMAPTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				93BA38A513CACCF900A4145F /* Debug */,
+				93BA38A613CACCF900A4145F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 93BA386613CACCF800A4145F /* Project object */;
+}
