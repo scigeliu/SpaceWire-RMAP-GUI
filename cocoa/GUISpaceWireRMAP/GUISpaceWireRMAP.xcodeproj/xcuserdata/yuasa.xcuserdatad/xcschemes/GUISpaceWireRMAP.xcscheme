@@ -56,6 +56,12 @@
             ReferencedContainer = "container:GUISpaceWireRMAP.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
+      <CommandLineArguments>
+         <CommandLineArgument
+            argument = "-NSBindingDebugLogLevel 1"
+            isEnabled = "YES">
+         </CommandLineArgument>
+      </CommandLineArguments>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>

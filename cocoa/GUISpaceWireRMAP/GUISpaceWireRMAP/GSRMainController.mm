@@ -9,7 +9,96 @@
 #import "GSRMainController.h"
 #import "Utility.h"
 
+#import "RMAPPacketUtilityViewController.h"
+#import "RMAPCRCViewController.h"
+
 @implementation GSRMainController
+
+
+class CheckUpdateThread : public CxxUtilities::Thread {
+private:
+	GSRMainController* mainController;
+
+public:
+	static std::string DefaultDownloadURL;
+
+public:
+	bool versionFileIsValid;
+	uint32_t latestVersion;
+	std::string downloadURL;
+
+public:
+	CheckUpdateThread(GSRMainController* mainController){
+		this->mainController=mainController;
+	}
+	
+public:
+	void run(){
+		NSURL *theURL = [NSURL URLWithString:@"https://galaxy.astro.isas.jaxa.jp/~yuasa/SpaceWire/versions/SpaceWireRMAPGUI.version"];
+		NSURLRequest *req=[NSURLRequest requestWithURL:theURL cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:1];
+		NSURLResponse *resp;
+		NSError *err;
+		
+		// 同期的な呼び出し。sendSynchronousRequestを使っているのが特徴です
+		NSData *result = [NSURLConnection sendSynchronousRequest:req
+											   returningResponse:&resp
+														   error:&err];
+		
+		using namespace std;
+		string str((const char*)[result bytes],[result length]);
+		
+		analyzeDonwloadedText(str);
+		
+		if(versionFileIsValid){
+			if(isNewVersionAvailable()){
+				if(downloadURL==""){
+					downloadURL=DefaultDownloadURL;
+				}
+				cout << "New version is available." << endl;
+				sleep(1000);
+				[mainController showUpdateNotificationWindow];
+			}else{
+				cout << "No new version." << endl;
+			}
+		}else{
+			cout << "Version file is invalid." << endl;
+		}
+	}
+	
+	void analyzeDonwloadedText(std::string str){
+		using namespace std;
+		using namespace CxxUtilities;
+		vector<string> lines=String::splitIntoLines(str);
+		versionFileIsValid=false;
+		for(size_t i=0;i<lines.size();i++){
+			if(String::contains(lines[i],"LatestVersion")){
+				try{
+					latestVersion=String::toUInt32(String::split(lines[i]," ")[1]);
+					versionFileIsValid=true;
+				}catch(...){
+					versionFileIsValid=false;
+				}
+			}
+			if(String::contains(lines[i],"DownloadURL")){
+				try{
+					downloadURL=String::split(lines[i]," ")[1];
+				}catch(...){
+					downloadURL="";
+				}
+			}
+		}
+	}
+	
+	bool isNewVersionAvailable(){
+		if(SpaceWireRMAPGUIVersion::Version<latestVersion){
+			return true;
+		}else{
+			return false;
+		}
+	}
+};
+
+std::string CheckUpdateThread::DefaultDownloadURL("https://galaxy.astro.isas.jaxa.jp/~yuasa/SpaceWire/");
 
 bool isFirstMessage;
 
@@ -30,29 +119,39 @@ bool isFirstMessage;
 	return ud;
 }
 
+- (void)notifyCompletionOfLaunching{
+	[rmapCRCViewController applicationFinishedLaunching];
+	[rmapPacketUtilityViewController applicationFinishedLaunching];
+	checkUpdateThread=new CheckUpdateThread(self);
+	checkUpdateThread->start();
+}
+
 - (void)saveDefaults{
 	using namespace std;
 	[self addMessage:@"Saving default parameters."];
-	[ud setInteger:1624 forKey:@"DefaultFileIsValid"];
+	[ud setInteger:SpaceWireRMAPGUIVersion::Version forKey:@"DefaultFileIsValid"];
 	[ud setInteger:[mainTab indexOfTabViewItem:[mainTab selectedTabViewItem]] forKey:@"IndexOfSelectedTab"];
 	[spaceWireIFViewController saveDefaults];
 	[spaceWireViewController saveDefaults];
 	[rmapViewController saveDefaults];
 	[rmapPacketUtilityViewController saveDefaults];
+	[rmapCRCViewController saveDefaults];
 }
 
 - (void)restoreDefaults{
 	using namespace std;
-	if([ud integerForKey:@"DefaultFileIsValid"]==1624){
+	if([ud integerForKey:@"DefaultFileIsValid"]==SpaceWireRMAPGUIVersion::Version){
 		[self addMessage:@"Restoring default parameters."];
 		[mainTab selectTabViewItemAtIndex:[ud integerForKey:@"IndexOfSelectedTab"]];
 		[spaceWireIFViewController restoreDefaults];
 		[spaceWireViewController restoreDefaults];
 		[rmapViewController restoreDefaults];
 		[rmapPacketUtilityViewController restoreDefaults];
+		[rmapCRCViewController restoreDefaults];
 	}else{
 		[self addMessage:@"Preference file is newly created for saving default parameters."];
 	}
+	[self notifyCompletionOfLaunching];
 }
 
 - (IBAction)clearLogButton:(id)sender {
@@ -201,6 +300,10 @@ bool isFirstMessage;
 
 - (IBAction)ackButtonClicked:(id)sender {
 	[ackWindow center];
+	using namespace std;
+	stringstream ss;
+	ss << "Version: " << SpaceWireRMAPGUIVersion::Version;
+	[ackWindowVersionCell setStringValue:[Utility toNSString:ss.str()]];
 	[ackWindow orderFront:splashWindow];
 }
 
@@ -220,6 +323,34 @@ bool isFirstMessage;
 - (IBAction)logWindowTransparencyChanged:(id)sender {
 	NSSlider* slider=(NSSlider*)sender;
 	[logWindow setAlphaValue:[slider floatValue]];
+}
+
+- (void)showUpdateNotificationWindow{
+	[currentVersionField setIntValue:SpaceWireRMAPGUIVersion::Version];
+	[latestVersionField setIntValue:checkUpdateThread->latestVersion];
+	[updateNotificationWindow center];
+	[updateNotificationWindow makeKeyAndOrderFront:mainWindow];
+	//[updateNotificationWindow orderWindow:NSWindowAbove relativeTo:0];
+}
+
+- (IBAction)updateWindowOKButtonClicked:(id)sender {
+	[updateNotificationWindow orderOut:nil];
+}
+
+- (IBAction)openTheDownloadPageButtonClicked:(id)sender {
+	[updateNotificationWindow orderOut:nil];
+	
+	using namespace std;
+	stringstream ss;
+	ss << "open " << checkUpdateThread->downloadURL;
+
+	NSTask *task  = [[NSTask alloc] init];
+	NSPipe *pipe  = [[NSPipe alloc] init];
+	[task setLaunchPath: @"/bin/sh"];
+	[task setArguments: [NSArray arrayWithObjects: @"-c", [Utility toNSString:ss.str()], nil]];
+	
+	[task setStandardOutput: pipe];
+	[task launch];
 }
 
 @end

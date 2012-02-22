@@ -33,6 +33,11 @@ using namespace std;
     [super dealloc];
 }
 
+- (void)applicationFinishedLaunching{
+	//set fonts
+	[dataField setFont:[NSFont fontWithName:@"Courier" size:10]]; 
+	[byteSequenceField setFont:[NSFont fontWithName:@"Courier" size:10]]; 
+}
 
 - (void)saveDefaults{
 	NSUserDefaults* ud=[mainController getNSUserDefaults];
@@ -78,10 +83,10 @@ using namespace std;
 	[ud setObject:[inrementNoIncrementSelector titleOfSelectedItem] forKey:@"RMAPPacketUtility.inrementNoIncrementSelector"];
 
 	//data
-	[ud setObject:[dataField stringValue] forKey:@"RMAPPacketUtility.dataField"];
+	[ud setObject:[dataField string] forKey:@"RMAPPacketUtility.dataField"];
 	
 	//byte sequence
-	[ud setObject:[byteSequenceField stringValue] forKey:@"RMAPPacketUtility.byteSequenceField"];
+	[ud setObject:[byteSequenceField string] forKey:@"RMAPPacketUtility.byteSequenceField"];
 	
 	//log button
 	[ud setInteger:[logPacketDumpForGenerationButton state] forKey:@"RMAPPacketUtility.logPacketDumpForGenerationButton"];
@@ -121,10 +126,10 @@ using namespace std;
 	[inrementNoIncrementSelector selectItemWithTitle:[ud stringForKey:@"RMAPPacketUtility.inrementNoIncrementSelector"]];
 	
 	//data
-	[dataField setStringValue:[ud stringForKey:@"RMAPPacketUtility.dataField"]];
+	[Utility setTextToNSTextView:[ud stringForKey:@"RMAPPacketUtility.dataField"] to:dataField];
 	
 	//byte sequence
-	[byteSequenceField setStringValue:[ud stringForKey:@"RMAPPacketUtility.byteSequenceField"]];
+	[Utility setTextToNSTextView:[ud stringForKey:@"RMAPPacketUtility.byteSequenceField"] to:byteSequenceField];
 	
 	//log button
 	[logPacketDumpForGenerationButton setState:[ud integerForKey:@"RMAPPacketUtility.logPacketDumpForGenerationButton"]];
@@ -254,7 +259,7 @@ using namespace std;
 	
 	//set data (only for write command and read reply)
 	if( (rmapPacket->isRead() && rmapPacket->isReply()) || (rmapPacket->isWrite() && rmapPacket->isCommand())){
-		std::vector<uint8> data=[self toUInt8Array:dataField];
+		std::vector<uint8> data=CxxUtilities::String::toUInt8Array([Utility toString:[dataField string]]);
 		rmapPacket->setData(data);
 	}else{
 		std::vector<uint8> data;
@@ -283,20 +288,60 @@ using namespace std;
 	int wordwidth=1;
 	int DumpsPerLine=8;
 	SpaceWireUtilities::dumpPacket(&ss,&data,wordwidth,DumpsPerLine);
-	[byteSequenceField setStringValue:[NSString stringWithUTF8String:ss.str().c_str()]];
+	[Utility setTextToNSTextView:[NSString stringWithUTF8String:ss.str().c_str()] to:byteSequenceField];
 	
 	[mainController addMessage:@"Packet was generated."];
 
 	if([logPacketDumpForGenerationButton state]==NSOnState){
 		[mainController addMessage:@"Packet dump:"];
-		[mainController addMessage:[byteSequenceField stringValue]];
+		[mainController addMessage:[byteSequenceField string]];
 		[mainController addMessageString:rmapPacket->toString()];
 	}
 }
 
+- (void)updateReplyStatusLabel:(uint8_t)status{
+	[replyStatusLabel setStringValue:[Utility toNSString:RMAPReplyStatus::replyStatusToStringWithoutCodeValue(status)]];
+}
+
+- (void)updateInstructionSelectors:(uint8_t)instruction{
+	RMAPPacket tempPacket;
+	tempPacket.setInstruction(instruction);
+	
+	if(tempPacket.isRead()){
+		[readWriteSelector selectItemAtIndex:0];//read
+	}else{
+		[readWriteSelector selectItemAtIndex:1];//write
+	}
+	
+	if(tempPacket.isCommand()){
+		[commandReplySelector selectItemAtIndex:0];//command
+	}else{
+		[commandReplySelector selectItemAtIndex:1];//reply
+	}
+	
+	if(tempPacket.isReplyFlagSet()){
+		[ackNoAckSelector selectItemAtIndex:0];//ack
+	}else{
+		[ackNoAckSelector selectItemAtIndex:1];//no ack
+	}
+	
+	if(tempPacket.isIncrementFlagSet()){
+		[inrementNoIncrementSelector selectItemAtIndex:0];//increment
+	}else{
+		[inrementNoIncrementSelector selectItemAtIndex:1];//no increment
+	}
+	
+	if(tempPacket.isVerifyFlagSet()){
+		[verifyNoVerifySelector selectItemAtIndex:0];//verify
+	}else{
+		[verifyNoVerifySelector selectItemAtIndex:1];//no verify
+	}
+	
+}
+
 - (IBAction)interpretButtonPushed:(id)sender {
 	bool dataLengthMismatch=false;
-	std::vector<uint8_t> data=[self toUInt8Array:byteSequenceField];
+	std::vector<uint8_t> data=CxxUtilities::String::toUInt8Array([Utility toString:[byteSequenceField string]]);
 	[mainController addMessage:@"Packet interpretation was executed."];
 	//interpret withtout checking crcs
 	try{
@@ -315,7 +360,7 @@ using namespace std;
 	
 	if([logPacketDumpForInterpretationButton state]==NSOnState){
 		[mainController addMessage:@"Packet dump:"];
-		[mainController addMessage:[byteSequenceField stringValue]];
+		[mainController addMessage:[byteSequenceField string]];
 		[mainController addMessageString:rmapPacket->toString()];
 	}
 	
@@ -326,36 +371,16 @@ using namespace std;
 	[self setInteger:rmapPacket->getTransactionID() to:transactionIDField];
 	[self setUnsignedChar:rmapPacket->getKey() to:keyField];
 	
-	if(rmapPacket->isRead()){
-		[readWriteSelector selectItemAtIndex:0];//read
-	}else{
-		[readWriteSelector selectItemAtIndex:1];//write
-	}
+
+	//set instruction field
+	[Utility setUnsignedChar:rmapPacket->getInstruction() to:instructionField];
+	[self updateInstructionSelectors:rmapPacket->getInstruction()];
 	
+	//reply status
 	if(rmapPacket->isCommand()){
-		[commandReplySelector selectItemAtIndex:0];//command
 		[replyStatusField setStringValue:@" "];
 	}else{
-		[commandReplySelector selectItemAtIndex:1];//reply
 		[Utility setUInt8:rmapPacket->getStatus() to:replyStatusField];
-	}
-	
-	if(rmapPacket->isReplyFlagSet()){
-		[ackNoAckSelector selectItemAtIndex:0];//ack
-	}else{
-		[ackNoAckSelector selectItemAtIndex:1];//no ack
-	}
-	
-	if(rmapPacket->isIncrementFlagSet()){
-		[inrementNoIncrementSelector selectItemAtIndex:0];//increment
-	}else{
-		[inrementNoIncrementSelector selectItemAtIndex:1];//no increment
-	}
-	
-	if(rmapPacket->isVerifyFlagSet()){
-		[verifyNoVerifySelector selectItemAtIndex:0];//verify
-	}else{
-		[verifyNoVerifySelector selectItemAtIndex:1];//no verify
 	}
 	
 	[self setUnsignedChar:rmapPacket->getExtendedAddress() to:extendedAddressField];
@@ -365,10 +390,11 @@ using namespace std;
 	
 	if(rmapPacket->hasData()){
 		[self setUnsignedChar:rmapPacket->getDataCRC() to:dataCRCField];
-		[self setUInt8Array:rmapPacket->getData() to:dataField];
+		std::vector<uint8_t> dataPointer=rmapPacket->getData();
+		[Utility setVectorUint8Pointer:&dataPointer terminatedWith:@"" toNSTextView:dataField];
 	}else{
 		[dataCRCField setStringValue:@" "];
-		[dataField setStringValue:@" "];
+		[Utility setTextToNSTextView:@" " to:dataField];
 	}
 
 	if(dataLengthMismatch){
@@ -430,6 +456,51 @@ using namespace std;
 	[mainController addRedMessage:@"Packet interpretation failed."];
 	return;
 }
+
+- (IBAction)instructionSelectorUpdated:(id)sender {
+	RMAPPacket tempPacket;
+	if([readWriteSelector selectedTag]==0){
+		tempPacket.setRead();
+	}else{
+		tempPacket.setWrite();
+	}
+	
+	if([commandReplySelector selectedTag]==1){
+		tempPacket.setCommand();
+	}else{
+		tempPacket.setReply();
+	}
+	
+	if([ackNoAckSelector selectedTag]==1){
+		tempPacket.setReplyMode();
+	}else{
+		tempPacket.setNoReplyMode();
+	}
+	
+	if([inrementNoIncrementSelector selectedTag]==1){
+		tempPacket.setIncrementMode();
+	}else{
+		tempPacket.setNoIncrementMode();
+	}
+	
+	if([verifyNoVerifySelector selectedTag]==1){
+		tempPacket.setVerifyMode();
+	}else{
+		tempPacket.setNoVerifyMode();
+	}
+	uint8_t instruction=tempPacket.getInstruction();
+	[Utility setUnsignedChar:instruction to:instructionField];
+}
+
+- (IBAction)instructionFieldUpdated:(id)sender {
+	uint8_t instruction=[Utility toUInt8:instructionField];
+	[self updateInstructionSelectors:instruction];
+}
+
+- (IBAction)replyStatusUpdated:(id)sender {
+	[self updateReplyStatusLabel:[Utility toUInt8:replyStatusField]];
+}
+
 
 @end
 

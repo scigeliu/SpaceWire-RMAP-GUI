@@ -42,7 +42,6 @@
 	}
 
 	[Utility setTextToNSTextView:[Utility toNSString:ss.str()] to:registeredRMAPTargetNodesTextView];
-	[registeredRMAPTargetNodesTextView selecteRange:NSMakeRange(0,0)];
 }
 
 - (IBAction)loadConfigurationButtonClicked:(id)sender {

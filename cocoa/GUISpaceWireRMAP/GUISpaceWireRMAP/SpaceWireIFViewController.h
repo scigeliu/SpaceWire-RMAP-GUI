@@ -17,7 +17,7 @@
 
 @interface SpaceWireIFViewController : NSObject {
 @private
-	SpaceWireIFOverTCP* spwif;
+	SpaceWireIF* spwif;
 	bool connected;
 	IBOutlet NSFormCell *ipAddressCell;
 	IBOutlet NSFormCell *portCell;

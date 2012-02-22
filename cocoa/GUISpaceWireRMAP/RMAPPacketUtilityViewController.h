@@ -34,10 +34,14 @@
 	IBOutlet NSTextField *headerCRCField;
 	IBOutlet NSPopUpButton *dataCRCSelector;
 	IBOutlet NSTextField *dataCRCField;
-	
 	IBOutlet NSTextField *replyStatusField;
-	IBOutlet NSTextField *dataField;
-	IBOutlet NSTextFieldCell *byteSequenceField;
+	
+	IBOutlet NSTextField *replyStatusLabel;
+	IBOutlet NSTextField *instructionField;
+	
+	IBOutlet NSTextView *dataField;
+	IBOutlet NSTextView *byteSequenceField;
+	
 	IBOutlet NSButton *generateButton;
 	IBOutlet NSButton *interpretButton;
 	
@@ -52,6 +56,8 @@
 	RMAPPacket* rmapPacket;
 }
 
+- (void)applicationFinishedLaunching;
+
 - (void)saveDefaults;
 - (void)restoreDefaults;
 
@@ -64,5 +70,8 @@
 - (std::vector<unsigned char>)toUnsignedCharArray:(id)inputfield;
 - (void)setUnsignedCharArray:(std::vector<unsigned char>)data to:(id)field;
 
+- (IBAction)instructionSelectorUpdated:(id)sender;
+- (IBAction)instructionFieldUpdated:(id)sender;
+- (IBAction)replyStatusUpdated:(id)sender;
 
 @end

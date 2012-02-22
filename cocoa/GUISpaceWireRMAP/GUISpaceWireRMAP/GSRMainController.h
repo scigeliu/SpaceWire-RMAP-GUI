@@ -16,6 +16,14 @@
 @class RMAPViewController;
 @class RMAPPacketUtilityViewController;
 @class RMAPTargetNodeController;
+@class RMAPCRCViewController;
+
+class SpaceWireRMAPGUIVersion {
+public:
+	const static uint32_t Version=20120210;
+};
+
+class CheckUpdateThread;
 
 @interface GSRMainController : NSObject {
 	IBOutlet NSWindow *mainWindow;
@@ -24,6 +32,8 @@
 	IBOutlet RMAPViewController *rmapViewController;
 	IBOutlet RMAPPacketUtilityViewController *rmapPacketUtilityViewController;
 	IBOutlet RMAPTargetNodeController *rmapTargetNodeController;
+	IBOutlet RMAPCRCViewController *rmapCRCViewController;
+	
 	IBOutlet NSTextView *messageCell;
 	SpaceWireIF* spwif;
 	bool isSpaceWireIFSet_;
@@ -36,12 +46,21 @@
 	
 	IBOutlet NSWindow *splashWindow;
 	
+	//update window
+	
+	IBOutlet NSPanel *updateNotificationWindow;
+	IBOutlet NSTextField *currentVersionField;
+	IBOutlet NSTextField *latestVersionField;
+
+	//
 	bool logWindowIsDisplayed;
 	IBOutlet NSButton *showLogWindowButton;
 	IBOutlet NSPanel *logWindow;
 	IBOutlet NSPanel *ackWindow;
+	IBOutlet NSTextField *ackWindowVersionCell;
 	IBOutlet NSTabView *mainTab;
 	NSUserDefaults* ud;
+	CheckUpdateThread* checkUpdateThread;
 }
 
 - (NSUserDefaults*)getNSUserDefaults;
@@ -75,5 +94,11 @@
 - (IBAction)ackButtonClicked:(id)sender;
 - (IBAction)showLogButtonClicked:(id)sender;
 - (IBAction)logWindowTransparencyChanged:(id)sender;
+
+- (void)showUpdateNotificationWindow;
+- (IBAction)updateWindowOKButtonClicked:(id)sender;
+- (IBAction)openTheDownloadPageButtonClicked:(id)sender;
+
+
 
 @end

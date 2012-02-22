@@ -270,7 +270,7 @@ public:
 		[self handleSpaceWireIFException:e];
 		return;
 	}
-	[Utility setVectorUint8Pointer:data to:receivePacketCell];
+	[Utility setVectorUint8Pointer:data terminatedWith:@"" toNSTextView:receivePacketCell];
 	using namespace std;
 	stringstream ss;
 	if(data->size()<2){

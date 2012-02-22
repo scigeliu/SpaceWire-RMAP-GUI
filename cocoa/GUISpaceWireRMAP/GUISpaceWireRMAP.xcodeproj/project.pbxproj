@@ -11,6 +11,8 @@
 		9374A947149084AA0060D281 /* Icon_Red.icns in Resources */ = {isa = PBXBuildFile; fileRef = 9374A946149084AA0060D281 /* Icon_Red.icns */; };
 		938AAD5613CC1E9B00F54C12 /* RMAPPacketUtilityViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 938AAD5513CC1E9B00F54C12 /* RMAPPacketUtilityViewController.mm */; };
 		939BDE9E1456932F004188DA /* SpaceWireIFViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 939BDE9D1456932F004188DA /* SpaceWireIFViewController.mm */; };
+		939C91BB14E4DFA500378AF6 /* XMLParserNS.mm in Sources */ = {isa = PBXBuildFile; fileRef = 939C91BA14E4DFA500378AF6 /* XMLParserNS.mm */; };
+		93A2DC9714BD30480026F87E /* RMAPCRCViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 93A2DC9614BD30480026F87E /* RMAPCRCViewController.mm */; };
 		93BA387413CACCF800A4145F /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93BA387313CACCF800A4145F /* Cocoa.framework */; };
 		93BA387E13CACCF800A4145F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 93BA387C13CACCF800A4145F /* InfoPlist.strings */; };
 		93BA388113CACCF800A4145F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 93BA388013CACCF800A4145F /* main.m */; };
@@ -45,7 +47,10 @@
 		938AAD5513CC1E9B00F54C12 /* RMAPPacketUtilityViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = RMAPPacketUtilityViewController.mm; path = ../RMAPPacketUtilityViewController.mm; sourceTree = "<group>"; };
 		939BDE9C1456932F004188DA /* SpaceWireIFViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpaceWireIFViewController.h; sourceTree = "<group>"; };
 		939BDE9D1456932F004188DA /* SpaceWireIFViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SpaceWireIFViewController.mm; sourceTree = "<group>"; };
-		93BA386F13CACCF800A4145F /* GUISpaceWireRMAP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = GUISpaceWireRMAP.app; path = "SpaceWire RMAP GUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		939C91BA14E4DFA500378AF6 /* XMLParserNS.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = XMLParserNS.mm; path = ../../../../XMLUtilities/XMLParserNS.mm; sourceTree = "<group>"; };
+		93A2DC9514BD30480026F87E /* RMAPCRCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMAPCRCViewController.h; sourceTree = "<group>"; };
+		93A2DC9614BD30480026F87E /* RMAPCRCViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RMAPCRCViewController.mm; sourceTree = "<group>"; };
+		93BA386F13CACCF800A4145F /* SpaceWire RMAP GUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SpaceWire RMAP GUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		93BA387313CACCF800A4145F /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		93BA387613CACCF800A4145F /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		93BA387713CACCF800A4145F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -110,7 +115,7 @@
 		93BA387013CACCF800A4145F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				93BA386F13CACCF800A4145F /* GUISpaceWireRMAP.app */,
+				93BA386F13CACCF800A4145F /* SpaceWire RMAP GUI.app */,
 				93BA389013CACCF900A4145F /* GUISpaceWireRMAPTests.octest */,
 			);
 			name = Products;
@@ -140,25 +145,28 @@
 			children = (
 				9374A946149084AA0060D281 /* Icon_Red.icns */,
 				935574E1148DE4D600706898 /* JindaijiFlower.JPG */,
-				938AAD5413CC1E9B00F54C12 /* RMAPPacketUtilityViewController.h */,
-				938AAD5513CC1E9B00F54C12 /* RMAPPacketUtilityViewController.mm */,
+				93BA388813CACCF800A4145F /* MainMenu.xib */,
 				93BA388513CACCF800A4145F /* GUISpaceWireRMAPAppDelegate.h */,
 				93BA388613CACCF800A4145F /* GUISpaceWireRMAPAppDelegate.mm */,
-				93BA388813CACCF800A4145F /* MainMenu.xib */,
-				93BA387A13CACCF800A4145F /* Supporting Files */,
+				93E4AFD91457D35700980A57 /* GSRMainController.h */,
+				93E4AFDA1457D35700980A57 /* GSRMainController.mm */,
 				93D49C03145549C2001AC185 /* SpaceWireViewController.h */,
 				93D49C04145549C2001AC185 /* SpaceWireViewController.mm */,
 				939BDE9C1456932F004188DA /* SpaceWireIFViewController.h */,
 				939BDE9D1456932F004188DA /* SpaceWireIFViewController.mm */,
-				93E4AFD91457D35700980A57 /* GSRMainController.h */,
-				93E4AFDA1457D35700980A57 /* GSRMainController.mm */,
-				93E4AFDD1457D64800980A57 /* Utility.h */,
-				93E4AFDE1457D64800980A57 /* Utility.mm */,
-				93E4AFE41457DC4A00980A57 /* RMAPViewController.h */,
-				93E4AFE51457DC4A00980A57 /* RMAPViewController.mm */,
-				93E4AFE71457DCC500980A57 /* CommonHeader.h */,
 				93D44BCB148CC8100045DDA9 /* RMAPTargetNodeController.h */,
 				93D44BCC148CC8100045DDA9 /* RMAPTargetNodeController.mm */,
+				93E4AFE41457DC4A00980A57 /* RMAPViewController.h */,
+				93E4AFE51457DC4A00980A57 /* RMAPViewController.mm */,
+				938AAD5413CC1E9B00F54C12 /* RMAPPacketUtilityViewController.h */,
+				938AAD5513CC1E9B00F54C12 /* RMAPPacketUtilityViewController.mm */,
+				93A2DC9514BD30480026F87E /* RMAPCRCViewController.h */,
+				93A2DC9614BD30480026F87E /* RMAPCRCViewController.mm */,
+				93E4AFDD1457D64800980A57 /* Utility.h */,
+				93E4AFDE1457D64800980A57 /* Utility.mm */,
+				93E4AFE71457DCC500980A57 /* CommonHeader.h */,
+				939C91BA14E4DFA500378AF6 /* XMLParserNS.mm */,
+				93BA387A13CACCF800A4145F /* Supporting Files */,
 			);
 			path = GUISpaceWireRMAP;
 			sourceTree = "<group>";
@@ -212,7 +220,7 @@
 			);
 			name = "SpaceWire RMAP GUI";
 			productName = GUISpaceWireRMAP;
-			productReference = 93BA386F13CACCF800A4145F /* GUISpaceWireRMAP.app */;
+			productReference = 93BA386F13CACCF800A4145F /* SpaceWire RMAP GUI.app */;
 			productType = "com.apple.product-type.application";
 		};
 		93BA388F13CACCF900A4145F /* GUISpaceWireRMAPTests */ = {
@@ -311,6 +319,8 @@
 				93E4AFDF1457D64800980A57 /* Utility.mm in Sources */,
 				93E4AFE61457DC4A00980A57 /* RMAPViewController.mm in Sources */,
 				93D44BCD148CC8100045DDA9 /* RMAPTargetNodeController.mm in Sources */,
+				93A2DC9714BD30480026F87E /* RMAPCRCViewController.mm in Sources */,
+				939C91BB14E4DFA500378AF6 /* XMLParserNS.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,16 +432,23 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GUISpaceWireRMAP/GUISpaceWireRMAP-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					/Users/yuasa/ws/XMLUtilities,
+					/Users/yuasa/Documents/workspace/SpaceWireRMAPLibrary/includes,
+					/usr/local/CxxUtilities/includes,
+				);
 				INFOPLIST_FILE = "GUISpaceWireRMAP/GUISpaceWireRMAP-Info.plist";
 				OTHER_CPLUSPLUSFLAGS = (
 					"$(OTHER_CFLAGS)",
-					"-DNO_XMLLODER",
+					"-DXMLUTILITIES_NSXMLPARSER",
 				);
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -441,16 +458,23 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GUISpaceWireRMAP/GUISpaceWireRMAP-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					/Users/yuasa/ws/XMLUtilities,
+					/Users/yuasa/Documents/workspace/SpaceWireRMAPLibrary/includes,
+					/usr/local/CxxUtilities/includes,
+				);
 				INFOPLIST_FILE = "GUISpaceWireRMAP/GUISpaceWireRMAP-Info.plist";
 				OTHER_CPLUSPLUSFLAGS = (
 					"$(OTHER_CFLAGS)",
-					"-DNO_XMLLODER",
+					"-DXMLUTILITIES_NSXMLPARSER",
 				);
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

@@ -151,7 +151,7 @@ using namespace CxxUtilities;
 	if(str==""){
 		str=" ";
 	}
-	[field setTextToNSTextView:[NSString stringWithUTF8String:str.c_str()] to:field];
+	[Utility setTextToNSTextView:[NSString stringWithUTF8String:str.c_str()] to:field];
 }
 
 +(void)showDialogBox:(NSString*)message1:(NSString*)message2{
