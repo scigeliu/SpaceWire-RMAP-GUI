@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9304C5A616514DA40021F681 /* XMLParserNS.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9304C5A516514DA40021F681 /* XMLParserNS.mm */; };
 		935574E2148DE4D600706898 /* JindaijiFlower.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 935574E1148DE4D600706898 /* JindaijiFlower.JPG */; };
 		9374A947149084AA0060D281 /* Icon_Red.icns in Resources */ = {isa = PBXBuildFile; fileRef = 9374A946149084AA0060D281 /* Icon_Red.icns */; };
 		938AAD5613CC1E9B00F54C12 /* RMAPPacketUtilityViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 938AAD5513CC1E9B00F54C12 /* RMAPPacketUtilityViewController.mm */; };
 		939BDE9E1456932F004188DA /* SpaceWireIFViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 939BDE9D1456932F004188DA /* SpaceWireIFViewController.mm */; };
-		939C91BB14E4DFA500378AF6 /* XMLParserNS.mm in Sources */ = {isa = PBXBuildFile; fileRef = 939C91BA14E4DFA500378AF6 /* XMLParserNS.mm */; };
 		93A2DC9714BD30480026F87E /* RMAPCRCViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 93A2DC9614BD30480026F87E /* RMAPCRCViewController.mm */; };
 		93BA387413CACCF800A4145F /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93BA387313CACCF800A4145F /* Cocoa.framework */; };
 		93BA387E13CACCF800A4145F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 93BA387C13CACCF800A4145F /* InfoPlist.strings */; };
@@ -23,6 +23,7 @@
 		93BA389913CACCF900A4145F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 93BA389713CACCF900A4145F /* InfoPlist.strings */; };
 		93BA389C13CACCF900A4145F /* GUISpaceWireRMAPTests.h in Resources */ = {isa = PBXBuildFile; fileRef = 93BA389B13CACCF900A4145F /* GUISpaceWireRMAPTests.h */; };
 		93BA389E13CACCF900A4145F /* GUISpaceWireRMAPTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 93BA389D13CACCF900A4145F /* GUISpaceWireRMAPTests.m */; };
+		93BFD77D16684FC8002988DB /* RouterConfigurationController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 93BFD77C16684FC8002988DB /* RouterConfigurationController.mm */; };
 		93D44BCD148CC8100045DDA9 /* RMAPTargetNodeController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 93D44BCC148CC8100045DDA9 /* RMAPTargetNodeController.mm */; };
 		93D49C06145549C2001AC185 /* SpaceWireViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 93D49C04145549C2001AC185 /* SpaceWireViewController.mm */; };
 		93E4AFDB1457D35700980A57 /* GSRMainController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 93E4AFDA1457D35700980A57 /* GSRMainController.mm */; };
@@ -41,13 +42,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9304C5A516514DA40021F681 /* XMLParserNS.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = XMLParserNS.mm; path = ../../../../../eclipse/XMLUtilities/include/XMLParserNS.mm; sourceTree = "<group>"; };
 		935574E1148DE4D600706898 /* JindaijiFlower.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = JindaijiFlower.JPG; sourceTree = "<group>"; };
 		9374A946149084AA0060D281 /* Icon_Red.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Icon_Red.icns; sourceTree = "<group>"; };
 		938AAD5413CC1E9B00F54C12 /* RMAPPacketUtilityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RMAPPacketUtilityViewController.h; path = ../RMAPPacketUtilityViewController.h; sourceTree = "<group>"; };
 		938AAD5513CC1E9B00F54C12 /* RMAPPacketUtilityViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = RMAPPacketUtilityViewController.mm; path = ../RMAPPacketUtilityViewController.mm; sourceTree = "<group>"; };
 		939BDE9C1456932F004188DA /* SpaceWireIFViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpaceWireIFViewController.h; sourceTree = "<group>"; };
 		939BDE9D1456932F004188DA /* SpaceWireIFViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SpaceWireIFViewController.mm; sourceTree = "<group>"; };
-		939C91BA14E4DFA500378AF6 /* XMLParserNS.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = XMLParserNS.mm; path = ../../../../XMLUtilities/XMLParserNS.mm; sourceTree = "<group>"; };
 		93A2DC9514BD30480026F87E /* RMAPCRCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMAPCRCViewController.h; sourceTree = "<group>"; };
 		93A2DC9614BD30480026F87E /* RMAPCRCViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RMAPCRCViewController.mm; sourceTree = "<group>"; };
 		93BA386F13CACCF800A4145F /* SpaceWire RMAP GUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SpaceWire RMAP GUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -69,6 +70,8 @@
 		93BA389A13CACCF900A4145F /* GUISpaceWireRMAPTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GUISpaceWireRMAPTests-Prefix.pch"; sourceTree = "<group>"; };
 		93BA389B13CACCF900A4145F /* GUISpaceWireRMAPTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GUISpaceWireRMAPTests.h; sourceTree = "<group>"; };
 		93BA389D13CACCF900A4145F /* GUISpaceWireRMAPTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GUISpaceWireRMAPTests.m; sourceTree = "<group>"; };
+		93BFD77B16684FC8002988DB /* RouterConfigurationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RouterConfigurationController.h; sourceTree = "<group>"; };
+		93BFD77C16684FC8002988DB /* RouterConfigurationController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RouterConfigurationController.mm; sourceTree = "<group>"; };
 		93D44BCB148CC8100045DDA9 /* RMAPTargetNodeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMAPTargetNodeController.h; sourceTree = "<group>"; };
 		93D44BCC148CC8100045DDA9 /* RMAPTargetNodeController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RMAPTargetNodeController.mm; sourceTree = "<group>"; };
 		93D49C03145549C2001AC185 /* SpaceWireViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpaceWireViewController.h; sourceTree = "<group>"; };
@@ -143,9 +146,10 @@
 		93BA387913CACCF800A4145F /* GUISpaceWireRMAP */ = {
 			isa = PBXGroup;
 			children = (
+				93BA388813CACCF800A4145F /* MainMenu.xib */,
+				9304C5A516514DA40021F681 /* XMLParserNS.mm */,
 				9374A946149084AA0060D281 /* Icon_Red.icns */,
 				935574E1148DE4D600706898 /* JindaijiFlower.JPG */,
-				93BA388813CACCF800A4145F /* MainMenu.xib */,
 				93BA388513CACCF800A4145F /* GUISpaceWireRMAPAppDelegate.h */,
 				93BA388613CACCF800A4145F /* GUISpaceWireRMAPAppDelegate.mm */,
 				93E4AFD91457D35700980A57 /* GSRMainController.h */,
@@ -165,8 +169,9 @@
 				93E4AFDD1457D64800980A57 /* Utility.h */,
 				93E4AFDE1457D64800980A57 /* Utility.mm */,
 				93E4AFE71457DCC500980A57 /* CommonHeader.h */,
-				939C91BA14E4DFA500378AF6 /* XMLParserNS.mm */,
 				93BA387A13CACCF800A4145F /* Supporting Files */,
+				93BFD77B16684FC8002988DB /* RouterConfigurationController.h */,
+				93BFD77C16684FC8002988DB /* RouterConfigurationController.mm */,
 			);
 			path = GUISpaceWireRMAP;
 			sourceTree = "<group>";
@@ -320,7 +325,8 @@
 				93E4AFE61457DC4A00980A57 /* RMAPViewController.mm in Sources */,
 				93D44BCD148CC8100045DDA9 /* RMAPTargetNodeController.mm in Sources */,
 				93A2DC9714BD30480026F87E /* RMAPCRCViewController.mm in Sources */,
-				939C91BB14E4DFA500378AF6 /* XMLParserNS.mm in Sources */,
+				9304C5A616514DA40021F681 /* XMLParserNS.mm in Sources */,
+				93BFD77D16684FC8002988DB /* RouterConfigurationController.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -439,9 +445,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GUISpaceWireRMAP/GUISpaceWireRMAP-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
-					/Users/yuasa/ws/XMLUtilities,
-					/Users/yuasa/Documents/workspace/SpaceWireRMAPLibrary/includes,
-					/usr/local/CxxUtilities/includes,
+					/Users/yuasa/ws/XMLUtilities/include,
+					/Users/yuasa/ws/SpaceWireRMAPLibrary/includes,
+					/Users/yuasa/ws/CxxUtilities/includes,
 				);
 				INFOPLIST_FILE = "GUISpaceWireRMAP/GUISpaceWireRMAP-Info.plist";
 				OTHER_CPLUSPLUSFLAGS = (
@@ -465,9 +471,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GUISpaceWireRMAP/GUISpaceWireRMAP-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
-					/Users/yuasa/ws/XMLUtilities,
-					/Users/yuasa/Documents/workspace/SpaceWireRMAPLibrary/includes,
-					/usr/local/CxxUtilities/includes,
+					/Users/yuasa/ws/XMLUtilities/include,
+					/Users/yuasa/ws/SpaceWireRMAPLibrary/includes,
+					/Users/yuasa/ws/CxxUtilities/includes,
 				);
 				INFOPLIST_FILE = "GUISpaceWireRMAP/GUISpaceWireRMAP-Info.plist";
 				OTHER_CPLUSPLUSFLAGS = (

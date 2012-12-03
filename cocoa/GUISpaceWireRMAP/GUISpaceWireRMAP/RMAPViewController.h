@@ -121,8 +121,11 @@ public:
 - (void)logReplyPacketDump;
 - (void)rmapEngineWasStopped;
 
-
+- (bool)isRMAPEngineStarted;
 
 - (void)callSpaceWireViewControllerRMAPEngineStoppedWhenStopping:(bool)flag;
 - (RMAPViewControllerCloseActionStopRMAPEngine*)getRMAPViewControllerCloseActionStopRMAPEngine;
+
+- (RMAPInitiator*)getRMAPInitiator;
+
 @end

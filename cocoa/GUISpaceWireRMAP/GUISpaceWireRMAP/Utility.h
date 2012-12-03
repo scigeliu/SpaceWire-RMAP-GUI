@@ -42,5 +42,9 @@
 +(void)setTextToNSTextView:(NSString*)string to:(NSTextView*)id;
 +(NSString*)vectorUint8ToNSString:(std::vector<uint8_t>&)data;
 
++(NSString*)integerToNSString:(int)value;
+
++(NSString*)doubleToNSString:(int)value;
+
 @end
 

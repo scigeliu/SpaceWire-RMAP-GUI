@@ -20,7 +20,7 @@
 
 class SpaceWireRMAPGUIVersion {
 public:
-	const static uint32_t Version=20120210;
+	const static uint32_t Version=20121203;
 };
 
 class CheckUpdateThread;

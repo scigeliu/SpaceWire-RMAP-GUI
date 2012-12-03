@@ -251,12 +251,7 @@ using namespace std;
 	
 	//memory address
 	rmapPacket->setAddress([self toUInt32:memoryAddressField]);
- 
-	//data length (only for read command and write reply)
-	if( (rmapPacket->isRead() && rmapPacket->isCommand()) || (rmapPacket->isWrite() && rmapPacket->isReply())){
-		rmapPacket->setDataLength([self toUInt32:lengthField]);
-	}
-	
+ 	
 	//set data (only for write command and read reply)
 	if( (rmapPacket->isRead() && rmapPacket->isReply()) || (rmapPacket->isWrite() && rmapPacket->isCommand())){
 		std::vector<uint8> data=CxxUtilities::String::toUInt8Array([Utility toString:[dataField string]]);
@@ -264,6 +259,12 @@ using namespace std;
 	}else{
 		std::vector<uint8> data;
 		rmapPacket->setData(data);
+	}
+
+	//data length (only for read command and write reply)
+	using namespace std;
+	if( (rmapPacket->isRead() && rmapPacket->isCommand()) || (rmapPacket->isWrite() && rmapPacket->isReply())){
+		rmapPacket->setLength([self toUInt32:lengthField]);
 	}
 	
 	//CRCs

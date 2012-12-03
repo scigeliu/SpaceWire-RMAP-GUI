@@ -12,6 +12,8 @@
 using namespace std;
 using namespace CxxUtilities;
 
+static const size_t MaximumBytesToBeSetToTextField=1024*128;
+
 @implementation Utility
 
 +(id)init
@@ -96,11 +98,20 @@ using namespace CxxUtilities;
 
 +(void)setUnsignedCharArrayPointer:(std::vector<unsigned char>*)data terminatedWith:(NSString*)termination to:(id)field{
 	stringstream ss;
-	for(int i=0;i<data->size();i++){
+	size_t size;
+	if(data->size()<MaximumBytesToBeSetToTextField){
+		size=data->size();
+	}else{
+		size=MaximumBytesToBeSetToTextField;
+	}
+	for(int i=0;i<size;i++){
 		ss << "0x" << hex << setw(2) << setfill('0') << right << (uint32_t)data->at(i);
 		if(i!=data->size()){
 			ss << " ";
 		}
+	}
+	if(data->size()!=size){
+		ss << "(" << data->size()-size << " bytes omitted ";
 	}
 	ss << [Utility toString:termination];
 	string str=ss.str();
@@ -124,9 +135,15 @@ using namespace CxxUtilities;
 
 +(void)setVectorUint8Pointer:(std::vector<uint8_t>*)data terminatedWith:(NSString*)termination to:(id)field{
 	stringstream ss;
-	for(int i=0;i<data->size();i++){
+	size_t size;
+	if(data->size()<MaximumBytesToBeSetToTextField){
+		size=data->size();
+	}else{
+		size=MaximumBytesToBeSetToTextField;
+	}
+	for(int i=0;i<size;i++){
 		ss << "0x" << hex << setw(2) << setfill('0') << right << (uint32_t)data->at(i);
-		if(i!=data->size()){
+		if(i!=size){
 			ss << " ";
 		}
 	}
@@ -140,9 +157,15 @@ using namespace CxxUtilities;
 
 +(void)setVectorUint8Pointer:(std::vector<uint8_t>*)data terminatedWith:(NSString*)termination toNSTextView:(NSTextView*)field{
 	stringstream ss;
-	for(int i=0;i<data->size();i++){
+	size_t size;
+	if(data->size()<MaximumBytesToBeSetToTextField){
+		size=data->size();
+	}else{
+		size=MaximumBytesToBeSetToTextField;
+	}
+	for(int i=0;i<size;i++){
 		ss << "0x" << hex << setw(2) << setfill('0') << right << (uint32_t)data->at(i);
-		if(i!=data->size()){
+		if(i!=size){
 			ss << " ";
 		}
 	}
@@ -184,4 +207,19 @@ using namespace CxxUtilities;
 	}
 	return [Utility toNSString:ss.str()];
 }
+
++(NSString*)integerToNSString:(int)value{
+	using namespace std;
+	std::stringstream ss;
+	ss << value;
+	return [[NSString alloc] initWithCString:ss.str().c_str() encoding:NSASCIIStringEncoding];
+}
+
++(NSString*)doubleToNSString:(int)value{
+	using namespace std;
+	std::stringstream ss;
+	ss << value;
+	return [[NSString alloc] initWithCString:ss.str().c_str() encoding:NSASCIIStringEncoding];
+}
+
 @end

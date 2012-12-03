@@ -321,6 +321,19 @@ public:
 }
 
 - (IBAction)saveReceivedPacketButtonClicked:(id)sender {
+	NSSavePanel *savePanel	= [NSSavePanel savePanel];
+	NSInteger pressedButton = [savePanel runModal];
+
+	if( pressedButton == NSOKButton ){
+		//get file path
+		NSURL * filePath = [savePanel URL];
+		//save received packet to file
+		[[receivePacketCell string] writeToURL:filePath atomically:NO encoding:NSUTF8StringEncoding error:NULL];
+	}else if( pressedButton == NSCancelButton ){
+		//do nothing
+	}else{
+		//error
+	}
 }
 
 - (void)startPeriodicTimecodeEmission {

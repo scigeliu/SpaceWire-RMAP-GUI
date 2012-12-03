@@ -499,4 +499,8 @@
 - (RMAPViewControllerCloseActionStopRMAPEngine*)getRMAPViewControllerCloseActionStopRMAPEngine{
 	return rmapViewControllerCloseActionStopRMAPEngine;
 }
+
+- (RMAPInitiator*)getRMAPInitiator{
+	return rmapInitiator;
+}
 @end
